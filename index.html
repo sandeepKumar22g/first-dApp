@@ -35,4 +35,16 @@
       <p id="showMood"></p>
     </div>
   </body>
+  <script charset="UTF-8" src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript" ></script>
+
+  <script>
+    window.ethereum.enable();
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "sepolia");
+    const MoodContractAddress = "";
+    const MoodContractABI = [];
+    let MoodContract;
+    let signer;
+
+  </script>
+
 </html>
