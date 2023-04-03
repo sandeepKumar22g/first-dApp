@@ -44,8 +44,7 @@
   <script>
     window.ethereum.enable();
     const provider = new ethers.providers.Web3Provider(
-      window.ethereum,
-      "sepolia"
+      window.ethereum
     );
     const MoodContractAddress = "0x9CE9109a51702A5A1E415B9AD592213e9A19F549";
     const MoodContractABI = [
@@ -77,8 +76,8 @@
       },
     ];
 
-    let MoodContract;
-    let signer;
+    var MoodContract;
+    var signer;
 
     provider.send("eth_requestAccounts", []).then(() => {
       provider.listAccounts().then((accounts) => {
