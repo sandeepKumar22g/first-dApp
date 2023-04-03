@@ -76,7 +76,7 @@
         type: "function",
       },
     ];
-    
+
     let MoodContract;
     let signer;
 
@@ -91,6 +91,17 @@
       });
     });
 
+    async function getMood() {
+      const getMoodPromise = MoodContract.getMood();
+      const Mood = await getMoodPromise;
+      document.getElementById("showMood").innerText = `Your Mood: ${Mood}`;
+      console.log(Mood);
+    }
 
+    async function setMood() {
+      const mood = document.getElementById("mood").value;
+      const setMoodPromise = MoodContract.setMood(mood);
+      await setMoodPromise;
+    }
   </script>
 </html>
